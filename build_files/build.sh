@@ -14,7 +14,7 @@ dnf5 group install -y cosmic-desktop cosmic-desktop-apps
 dnf5 install -y --skip-broken @cosmic-desktop-environment
 dnf5 clean all && \
 rm -rf /var/cache/dnf/*
-systemctl disable display-manager && systemctl enable cosmic-greeter.service -f
+systemctl enable cosmic-greeter.service -f
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
