@@ -52,8 +52,8 @@ dnf5 clean all && \
 rm -rf /var/cache/dnf/*
 
 # Other packages I use
-dnf5 install -y --skip-broken \
-     openrazer-daemon
+#dnf5 install -y --skip-broken \
+#     openrazer-daemon
 #    ncdu \
 #    NetworkManager-tui
 
