@@ -20,7 +20,7 @@ dnf5 group info kde-desktop | \
         /^\(Default\|Optional\) packages\s*:/q  # Quit if we hit Default/Optional header
         s/^.*:[[:space:]]*//p
     }' | \
-    xargs dnf5 remove -y
+    xargs dnf5 remove -y --skip-broken
 
 #dnf5 install -y \
 #    qt6-qtbase-gui \
@@ -39,7 +39,7 @@ dnf5 group info kde-desktop | \
 dnf5 clean all && \
 rm -rf /var/cache/dnf/*
 
-dnf5 group install -y cosmic-desktop cosmic-desktop-apps
+dnf5 group install -y --skip-broken cosmic-desktop cosmic-desktop-apps
 
 dnf5 clean all && \
 rm -rf /var/cache/dnf/*
@@ -47,12 +47,12 @@ rm -rf /var/cache/dnf/*
 dnf5 clean all && \
 rm -rf /var/cache/dnf/*
 
-dnf5 install -y @cosmic-desktop-environment
+dnf5 install -y @cosmic-desktop-environment --skip-broken
 dnf5 clean all && \
 rm -rf /var/cache/dnf/*
 
 # Other packages I use
-dnf5 install -y \
+dnf5 install -y --skip-broken \
      openrazer-daemon
 #    ncdu \
 #    NetworkManager-tui
