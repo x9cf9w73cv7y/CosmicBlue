@@ -20,7 +20,7 @@ dnf5 group info kde-desktop | \
         /^\(Default\|Optional\) packages\s*:/q  # Quit if we hit Default/Optional header
         s/^.*:[[:space:]]*//p
     }' | \
-    xargs dnf5 remove -y --skip-broken
+    xargs dnf5 remove -y
 
 #dnf5 install -y \
 #    qt6-qtbase-gui \
